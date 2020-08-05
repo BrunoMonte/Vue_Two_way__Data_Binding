@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva Model</title>
+</head>
+
+    
+<body>
+    <div id="app">      
+        <input type="text" v-model="textoDigitado"/>       <!--Two way Data Binding, ele permite \alterar o valor da variavel, que esta dentro do JS-->
+            <br>
+            <button @click="alterarNome()">        <!--chamando função--> 
+                Chamar Alterar nome
+            </button>
+            <br>
+            <label v-text="textoDigitado"></label>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--Primeiro carrega comando, após faz script-->
+
+    <script>
+        new Vue ({          
+            
+            el: '#app',    
+            data:{              
+                textoDigitado: "",
+            },
+            methods: {
+                alterarNome(){
+                    this.textoDigitado = "Programador";     // Toda vez para manipular uma propriedade, trabalhamos com this.
+                }
+            },
+            
+        })
+
+
+    </script>
+
+    
+</body>
+</html>
